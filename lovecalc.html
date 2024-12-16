@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet.css">
+
+    <title>Love Calculator</title>
+  </head>
+  <body background="bg.jpg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+        div{
+            font-family: "Sour Gummy", sans-serif;
+            margin-top: 100px;}
+        
+        .flexy{
+            display : flex;
+            justify-content: center;
+            gap : 250px;
+        }
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+
+            align-items: center;
+            flex-direction: column;
+            background-image: url("bg.jpg");
+            font-family: "Sour Gummy", sans-serif;
+            font-weight: 500;
+            color: #000000;
+            }
+        h1 {
+            padding-bottom: 30px;
+            font-weight: 900;
+            font-size: 35px;
+            }
+        .form {
+            width: 30%;
+            position: relative;
+            height: 40px;
+            overflow: hidden;
+            }
+
+        .form input {
+            width: 100%;
+            height: 100%;
+            color: #000000;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            border: none;
+            background-color: #f38181;
+            }
+        .form label {
+            position: absolute;
+            bottom: 2px;
+            left: 2px;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            }
+        .form label::after {
+            content: "";
+            position: absolute;
+            bottom: 2px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            transform: translateX(-100%);
+            transition: all 0.3s ease;
+            }
+
+        .content-name {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            transition: all 0.3s ease;
+            }
+        .form input:focus {
+            outline: none;
+            }
+        .form input:focus + .label-name .content-name,
+        .form input:valid + .label-name .content-name {
+            transform: translateY(-150%);
+            font-size: 18px;
+            left: 5px;
+            bottom: 5px;
+
+            color: #000000;
+            }
+        .form input:focus + .label-name::after,
+        .form input:valid + .label-name::after {
+            transform: translateX(0%);
+            }
+            .button-container{
+            display: flex;
+            justify-content: center;
+            gap: 30px
+         }
+        
+        .giff{
+            display: flex;
+            justify-content: center;
+        }
+            
+
+        .button-56 {
+            align-items: center;
+            background-color: #fee6e3;
+            border: 2px solid #111;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #111;
+            cursor: pointer;
+            display: flex;
+            font-family: "Sour Gummy",sans-serif;
+            font-size: 16px;
+            height: 48px;
+            justify-content: center;
+            line-height: 24px;
+            max-width: 100%;
+            padding: 0 25px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            }
+
+        .button-56:after {
+            background-color: #111;
+            border-radius: 8px;
+            content: "";
+            display: block;
+            height: 48px;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            top: -2px;
+            transform: translate(8px, 8px);
+            transition: transform .2s ease-out;
+            z-index: -1;
+            }
+
+        .button-56:hover:after {
+            transform: translate(0, 0);
+            }
+
+        .button-56:active {
+            background-color: #ffdeda;
+            outline: 0;
+            }
+
+        .button-56:hover {
+            outline: 0;
+            }
+
+        @media (min-width: 768px) {
+            .button-56 {
+                padding: 0 40px;
+            }
+        }
+
+        #myGif{
+
+            display: none;
+            width: 300px;
+            height: auto;
+            padding-top: 30px;
+        }
+        #myText{
+            display: none;
+            padding-top: 50px;
+
+
+        }
+        </style>
+    <div><h1>LOVE CALCULATOR</h1></div>
+<div class="flexy">
+<div class="form">
+  <input type="text" name="text" autocomplete="off" required />
+  <label for="text" class="label-name">
+    <span class="content-name">
+      Your Name
+    </span>
+  </label>
+</div>
+<div class="form">
+    <input type="text" name="text" autocomplete="off" required />
+    <label for="text" class="label-name">
+      <span class="content-name">
+        Your Partner's Name
+      </span>
+    </label>
+  </div></div>
+  <div class="button-container">
+    <button class="button-56" role="button" id = "show">Calculate</button></div>
+
+    <h2 id="myText">YOUR LOVE IS INCREASING SO RAPIDLY THAT THE CALCULATOR BROKE!!</h2>
+    <img id="myGif" src ="jj.gif">
+    
+    <script>
+        const button = document.getElementById('show');
+        const gif = document.getElementById('myGif');
+        const text = document.getElementById('myText')
+    
+        button.addEventListener('click', () => {
+          
+          gif.style.display = 'block'; // Make the GIF appear
+          text.style.display = 'block';
+          
+          button.disabled = true; // Disable the button to prevent further clicks
+          window.scrollTo(0,350);
+        });
+      </script>
+  
+    </body>
+</html>
